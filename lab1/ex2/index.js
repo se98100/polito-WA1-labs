@@ -39,22 +39,70 @@ function TaskList(){
         .filter(task => task.urgent)
         .forEach(task => task.print());
     }
+
+    this.printAll = () => {
+        this.tasks.forEach(task => task.print());
+    }
 }
 
 function load(taskList){
-    return new Promise((resolve, reject) => {
+    return new Promise((res, rej) => {
         db.all('select * from tasks', (err, rows) => {
-            if(err != null) reject(err);
+            if(err != null) rej(err);
 
             rows.forEach(row => {
                 taskList.tasks.push(new Task(row.id, row.description, row.urgent == 1 ? true : false, 
                     row.private == 1 ? true : false, row.deadline != null ? dayjs(row.deadline) : null));
             });
-            resolve();
+            res();
         });
     });
 }
 
-var tl = new TaskList();
-console.log('****** Tasks: ******');
-load(tl).then(() => tl.tasks.forEach(task => task.print()));
+function loadByDeadline(taskList, deadline){
+    return new Promise((res, rej) => {
+        db.all('select * from tasks where deadline > datetime(?, \'unixepoch\')', deadline.unix(), (err, rows) => {
+            if(err != null) rej(err);
+
+            rows.forEach(row => {
+                taskList.tasks.push(new Task(row.id, row.description, row.urgent == 1 ? true : false, 
+                    row.private == 1 ? true : false, row.deadline != null ? dayjs(row.deadline) : null));
+            });
+            res();
+        });
+    });
+}
+
+function loadByDescription(taskList, word){
+    return new Promise((res, rej) => {
+        db.all('SELECT * FROM tasks WHERE description like $word', {$word: `%${word}%`}, (err, rows) => {
+            if(err != null) rej(err);
+
+            rows.forEach(row => {
+                taskList.tasks.push(new Task(row.id, row.description, row.urgent == 1 ? true : false, 
+                    row.private == 1 ? true : false, row.deadline != null ? dayjs(row.deadline) : null));
+            });
+            res();
+        });
+    });
+}
+
+async function main(){
+    var tl = new TaskList();
+    console.log('****** Tasks: ******');
+    await load(tl).then(() => tl.printAll());
+
+    var tl1 = new TaskList();
+    var deadline = dayjs('2021-03-10');
+    console.log(`\n****** Tasks filtered, only (deadline > ${deadline.format('LL')}): ******`);
+    await loadByDeadline(tl1, deadline).then(() => tl1.printAll());
+
+    var tl2 = new TaskList();
+    var word = 'y';
+    console.log(`\n****** Tasks filtered, only (\'${word}\' in description): ******`);
+    await loadByDescription(tl2, word).then(() => tl2.printAll());
+
+    db.close();
+}
+
+main();
