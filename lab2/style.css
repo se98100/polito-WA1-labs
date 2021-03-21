@@ -1,0 +1,11 @@
+.navbar-brand {
+    margin-right: 0;
+}
+
+.flex-fill {
+    flex: 1 !important;
+}
+
+#user-img {
+    opacity: 0.5;
+}

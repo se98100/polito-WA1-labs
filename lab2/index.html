@@ -10,10 +10,26 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <!-- Bootstrap -->
         
+        <link rel="stylesheet" href="style.css">
+
         <title>ToDo Manager</title>
     </head>
 
     <body>
+        <header>
+            <nav class="navbar navbar-dark bg-success">
+                <a class="navbar-brand flex-fill" href="#">
+                    <img src="icon.svg" width="30" height="30">
+                    ToDo Manager
+                </a>
+                <form class="form-inline flex-fill justify-content-center">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <div class="d-flex justify-content-end flex-fill">
+                    <img src="user.svg" id="user-img" height="40px">
+                </div>
+            </nav>
+        </header>
 
         <!-- Bootstrap -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
