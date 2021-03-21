@@ -31,8 +31,8 @@
             </nav>
         </header>
 
-        <main class="d-flex flex-column flex-grow-1">
-            <div class="col-4 flex-grow-1 bg-light" id="filter">
+        <main class="d-flex flex-grow-1">
+            <div class="col-4 bg-light" id="filter">
                 <ul class="list-group p-4 list-group-flush">
                     <li class="list-group-item active">All</li>
                     <li class="list-group-item">Important</li>
@@ -40,6 +40,38 @@
                     <li class="list-group-item">Next 7 Days</li>
                     <li class="list-group-item">Private</li>
                 </ul>
+            </div>
+
+            <div class="col-8 p-4">
+                <h1>All</h1>
+                <table class="table mt-3">
+                    <tr>
+                        <td>
+                            <input type="checkbox">
+                            Complete Lab 2
+                        </td>
+                        <td class="text-right"></td>
+                        <td class="deadline">Monday 22 March 2021 at 14:30</td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <input type="checkbox">
+                            Buy some groceries
+                        </td>
+                        <td class="text-right">
+                            <img src="public.svg" height="20px">
+                        </td>
+                        <td class="deadline">Today at 14:00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-danger">
+                            <input type="checkbox">
+                            Read a good book!
+                        </td>
+                        <td class="text-right"></td>
+                        <td class="deadline"></td>
+                      </tr>
+                </table>
             </div>
         </main>
 
