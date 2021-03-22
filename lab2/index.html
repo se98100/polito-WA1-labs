@@ -18,11 +18,14 @@
     <body class="d-flex flex-column">
         <header>
             <nav class="navbar navbar-dark bg-success">
-                <a class="navbar-brand flex-fill" href="#">
+                <div class="d-flex d-md-none justify-content-start flex-fill">
+                    <img src="menu.svg" id="user-img" height="30px">
+                </div>
+                <a class="navbar-brand d-flex d-md-inline-block flex-fill justify-content-center justify-content-md-start" href="#">
                     <img src="icon.svg" width="30" height="30">
                     ToDo Manager
                 </a>
-                <form class="form-inline flex-fill justify-content-center">
+                <form class="d-none d-md-flex form-inline flex-fill justify-content-center">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                 </form>
                 <div class="d-flex justify-content-end flex-fill">
