@@ -27,13 +27,7 @@ body {
     padding: 0;
 }
 
-.table td{
-    border-bottom: 1px solid #dee2e6;
-    border-top: 0;
-}
-
 .deadline {
-    text-align: right;
     font-size: 0.9rem;
 }
 
