@@ -1,0 +1,45 @@
+.navbar-brand {
+    margin-right: 0;
+}
+
+.flex-fill {
+    flex: 1 !important;
+}
+
+#user-img {
+    opacity: 0.5;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+}
+
+.list-group-item.active {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+body {
+    height: 100vh;
+}
+
+#filter {
+    padding: 0;
+}
+
+.deadline {
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+#add-button {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 1.5rem;
+}
+
+.col-xl-7 {
+    width: initial;
+    padding-left: 0;
+}
