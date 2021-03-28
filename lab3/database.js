@@ -40,5 +40,19 @@ const database = [
         important: false,
         deadline: null,
         private: false
+    },
+    {
+        id: 6,
+        description: "Task 6",
+        important: false,
+        deadline: "04-04-2021 10:45",
+        private: false
+    },
+    {
+        id: 7,
+        description: "Task 7",
+        important: true,
+        deadline: "04-05-2021 09:30",
+        private: false
     }
 ]
