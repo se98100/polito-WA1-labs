@@ -51,16 +51,16 @@
 
         <main class="d-flex flex-grow-1">
             <div class="d-none d-md-block col-4 bg-light" id="filter">
-                <ul class="list-group p-4 list-group-flush">
-                    <li class="list-group-item active">All</li>
-                    <li class="list-group-item">Important</li>
-                    <li class="list-group-item">Today</li>
-                    <li class="list-group-item">Next 7 Days</li>
-                    <li class="list-group-item">Private</li>
-                </ul>
+                <div class="list-group p-4 list-group-flush">
+                    <a id="all-filter" href="#" class="list-group-item list-group-item-action active">All</a>
+                    <a id="important-filter" href="#" class="list-group-item list-group-item-action">Important</a>
+                    <a id="today-filter" href="#" class="list-group-item list-group-item-action">Today</a>
+                    <a id="days-filter" href="#" class="list-group-item list-group-item-action">Next 7 Days</a>
+                    <a id="private-filter" href="#" class="list-group-item list-group-item-action">Private</a>
+                </div>
             </div>
 
-            <div class="col-12 col-md-8 p-4">
+            <div class="col-12 col-md-8 p-4" id="tasks-list">
                 <h1 id="filter-title" class="mb-1">All</h1>
             </div>
 

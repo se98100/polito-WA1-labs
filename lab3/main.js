@@ -1,6 +1,10 @@
 'use strict';
 
 function populate(tasks){
+    document.querySelectorAll('#tasks-list > span').forEach((element) => {
+        element.parentNode.removeChild(element);
+    });
+
     let filterName = document.getElementById('filter-title');
     for(const task of tasks){
         let format = task.deadline.isSame(dayjs(), 'day') ? '[Today at] HH:mm' : 'dddd D MMMM YYYY [at] HH:mm';
@@ -20,3 +24,14 @@ function populate(tasks){
 var tl = new TaskList();
 tl.loadFromObj(database);
 populate(tl.tasks);
+
+document.getElementById('all-filter').addEventListener('click', e => {
+    if(e.target.classList.contains('active'))
+        return;
+    
+    document.getElementById('filter-title').innerText = 'All';
+    let tasks = tl.tasks;
+    populate(tasks);
+    document.querySelector('.list-group-flush > .active').classList.remove('active');
+    e.target.classList.add('active');
+});
