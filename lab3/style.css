@@ -43,3 +43,8 @@ body {
     width: initial;
     padding-left: 0;
 }
+
+.navbar-toggler {
+    padding: 0;
+    border: 0;
+}

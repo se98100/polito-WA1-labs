@@ -10,7 +10,7 @@ const database = [
         id: 1,
         description: "Buy some groceries",
         important: false,
-        deadline: "03-27-2021 14:00",
+        deadline: dayjs().hour(14).minute(0),
         private: false
     },
     {
