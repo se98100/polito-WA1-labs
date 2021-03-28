@@ -20,9 +20,10 @@
         <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
         <script defer src="https://unpkg.com/dayjs@1.8.21/plugin/localizedFormat.js"></script>
 
-        <script defer src="database.js"></script>
-        <script defer src="tasks.js"></script>
-        <script defer src="main.js"></script>
+        <script defer src="js/database.js"></script>
+        <script defer src="js/tasks.js"></script>
+        <script defer src="js/main.js"></script>
+        <script defer src="js/handlers.js "></script>
 
         <title>ToDo Manager</title>
     </head>
@@ -31,20 +32,20 @@
         <header>
             <nav class="navbar navbar-dark bg-success">
                 <div class="d-flex d-md-none justify-content-start flex-fill">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <img src="menu.svg" id="user-img" height="30px">
+                    <button class="navbar-toggler" type="button">
+                        <img src="svg/menu.svg" id="user-img" height="30px">
                     </button>
                 </div>
 
                 <a class="navbar-brand d-flex d-md-inline-block flex-fill justify-content-center justify-content-md-start" href="#">
-                    <img src="icon.svg" width="30" height="30" class="mr-1 mr-md-0">
+                    <img src="svg/icon.svg" width="30" height="30" class="mr-1 mr-md-0">
                     ToDo Manager
                 </a>
                 <form class="d-none d-md-flex form-inline flex-fill justify-content-center">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                 </form>
                 <div class="d-flex justify-content-end flex-fill">
-                    <img src="user.svg" id="user-img" height="40px">
+                    <img src="svg/user.svg" id="user-img" height="40px">
                 </div>
             </nav>
         </header>
@@ -63,8 +64,7 @@
             <div class="col-12 col-md-8 p-4" id="tasks-list">
                 <h1 id="filter-title" class="mb-1">All</h1>
             </div>
-
-            <img src="add.svg" width="55rem" id="add-button">
+            <img src="svg/add.svg" width="55rem" id="add-button">
         </main>
     </body>
 </html>
